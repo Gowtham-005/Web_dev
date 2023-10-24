@@ -1,0 +1,81 @@
+button{
+    position: relative;
+  cursor: pointer;
+
+    margin-top: 20px;
+     padding: 5px;
+     padding-left:20px ;
+     padding-right:20px;
+
+    left: 2%;
+    background-color: red;
+    border: black 1px solid;
+    border-radius: 20px ;
+    color: aliceblue;
+}
+body{
+    box-sizing: border-box;
+    
+    padding: 0;
+    background-color: wheat;
+}
+p{
+    font-family: cursive;
+}
+
+.p1{
+    color: blue;
+}
+
+.p2{
+    color: tomato;
+}
+
+.p3{
+    color: chocolate;
+}
+
+i{
+font-family: fantasy;
+ font-size: 20px;
+  
+
+}
+input{
+    position: relative;
+    display: flex;
+
+    background-color: greenyellow;
+    border-radius: 20px;
+    
+}
+
+.result{
+    user-select: none;
+   cursor:context-menu;
+    z-index: -1;
+}
+
+.inp1{
+    background-color: skyblue;
+ 
+}
+
+.inp2{
+    background-color: tomato;
+     
+}
+
+::placeholder{
+    color: black;
+    opacity: 0.35;
+    text-align: center;
+}
+
+.res{
+    display: block;
+    background-color: red;
+    border: 1px black solid;
+    width: 50px;
+    text-align: center;
+}
