@@ -1,0 +1,144 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.btn{
+    position: absolute;
+    margin: 0px;
+    margin-top: 5px;
+    padding: 0px;
+    height: 50px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+button{
+    position: relative;
+    background-color: white;
+    width: 60px;
+    height: 50px;
+    border:none;
+    border-radius: 100%;
+   cursor: pointer;
+}
+ button:hover{
+    transition: 0.5s;
+    box-shadow: 0px 0px 10px 5px white;
+ }
+.l{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px black solid ;
+    border-radius: 100%;
+    /* animation-play-state: paused; */
+}
+.n{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px black solid ;
+    border-radius: 100%;
+    z-index: -1;
+    /* animation-name: move;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+   animation-play-state: running; */
+}
+.night{
+   z-index: 1;
+  
+}
+ 
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(250, 196, 0);
+    color: black;
+    font-family: cursive;
+}
+ 
+.nytMode{
+    background-color: rgb(3, 0, 8);
+    color: rgb(105, 168, 234);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+}
+ 
+
+.section2{
+    position: relative;
+    /* top: 100px; */
+    margin: 10px;
+    
+}
+ 
+.oppie{
+    position: absolute;
+    margin-top: 10px;
+    left: 40%;
+ 
+    width: 350px;
+    height: 250px;
+    border: 2px rgb(31, 184, 239) dashed;
+    border-radius: 50px;
+}
+
+
+.ayur{
+    position: relative;
+    width: 250px;
+    height:250px ;
+    
+    transition: 1s;
+    animation: move 1.5s ease-in-out  1 ; 
+    left: 500px;
+    transition: 0.5s;
+}
+@keyframes move {
+    from{
+        left: 0px;
+         
+    }
+    to{
+     
+    left: 500px;
+         
+    }
+}
+
+ h1{
+display: block;
+position: relative;
+ 
+    animation: txt 1.5s ease-in-out  1 ;
+    transition: 1s;
+   
+    top: 150px;
+    left: 200px;
+ }
+
+@keyframes txt {
+    from{
+      left: -400px;
+    }
+    to{
+       left: 200px;
+    }
+}
+
+.leaves{
+     position:absolute;
+    width: 750px;
+    height: 450px;
+    margin-left:-500px;
+}

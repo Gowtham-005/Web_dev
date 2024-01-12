@@ -1,0 +1,25 @@
+hi this is created by "touch" keyword in command line and also opened in the coommand line with the command "start" 
+
+like 
+
+mkdir  -  makedirectory
+cd  - change directory 
+
+ls - list items 
+
+cd ~ -to go to the root directory 
+cd .. -to go to the parent/prev directory    
+
+touch - creates a file in the folder 
+
+start - starts / opens the file in the folder 
+
+ex: touch txt1.txt
+    start txt1.txt  // this will create a txt file and open it 
+
+
+rm - removes the file / folder from the directory
+rm* - to remove  all the files on the directory
+rm -r   - to remove the whole directory
+
+pwd - print working directory  //to show wat directory we ar eon

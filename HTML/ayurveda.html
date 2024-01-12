@@ -53,16 +53,16 @@
     }
     button:hover{
         transition: 0.5s;
-        animation: rotate 2.5s ease-in infinite ;
+        animation: rotate 1s ease-in infinite ;
         animation-play-state: running;
         box-shadow: 0px 0px 5px 2px whitesmoke;
 }
 @keyframes rotate {
     from{
-        transform: scaleZ(-1);
+        transform: rotate(0deg);
     }
     to{
-        transform: scaleZ(1);
+        transform: rotate(-15deg);
     }
 }
 input{
@@ -88,12 +88,37 @@ input:default{
         text-align: center;
         opacity: 0.65;
     }
+.icon{
+    display: block;
+    position: relative;
+    top: 0px;
+}
+    img{
+      position: absolute;
+      top: 5px;
+      left: 10px;
+cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+    }
+.home{
+    position: absolute;
+top: 50px;
+left: 15px;
+font-size: 15px;
+font-family: fantasy;
+}
+
 </style>
+<div class="icon">
+    <a class="home_btn"><img src="/images/openheim.jpg" alt="Home" class="oppieBtn"><p class="home">HOME</p></a>
+</div>
 <div>
     Enter your probelm here<input type="text" name="" class="textbox" placeholder="Ex:Cold,Fever...">
-    <button class="button"><a id="search1" target="_blank" >Search</a></button>
+    <button class="button"><a id="search1"  >Search</a></button>
 
-    <p class="empty_space"> if working ill be gone;( </p> 
+    <p class="empty_space"> This is the home page </p> 
 </div>
 </body>
 
