@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Page</title>
+</head>
+<body>
+    <h1>2nd Question : <i> HOW MANY DAYS ARE YOU SUFFERING FROM ?</i></h1>
+    
+    <button onclick="startRecognition()">Start Voice Input</button>
+    <p>Tamil No. of days: <span id="tamilText"></span></p>
+    <p>Translated English No. of days: <span id="englishText"></span></p>
+
+    <script>
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'ta-IN'; // Tamil language
+        recognition.interimResults = false;
+
+        recognition.onresult = function(event) {
+            const tamilDate = event.results[0][0].transcript;
+            document.getElementById('tamilText').innerText = tamilDate;
+            translateText(tamilDate); // Send Tamil text to the server for translation
+        };
+
+        function startRecognition() {
+            recognition.start();
+        }
+
+        function translateText(tamilDate) {
+            fetch('/date', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ tamilDate })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('englishText').innerText = data.translatedDate;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

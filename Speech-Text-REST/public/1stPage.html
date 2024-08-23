@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil to English Voice Translator</title>
+</head>
+<body>
+    <h1>1st Question :<i>MENTION UR SYMPTOMS</i> ?</h1>
+
+    <button onclick="startRecognition()">Start Voice Input</button>
+    <p>Tamil Text: <span id="tamilText"></span></p>
+    <p>Translated English Text: <span id="englishText"></span></p>
+<br>
+<form action="/datePage" method="post">
+    <button type="submit">Next</button>
+</form>
+    <script>
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'ta-IN'; // Tamil language
+        recognition.interimResults = false;
+
+        recognition.onresult = function(event) {
+            const tamilText = event.results[0][0].transcript;
+            document.getElementById('tamilText').innerText = tamilText;
+            translateText(tamilText); // Send Tamil text to the server for translation
+        };
+
+        function startRecognition() {
+            recognition.start();
+        }
+
+        function translateText(tamilText) {
+            fetch('/translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ tamilText })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('englishText').innerText = data.translatedText;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "name": "speech-text-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vitalets/google-translate-api": "^9.2.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "http-proxy-agent": "^7.0.2",
+    "path": "^0.12.7",
+    "qr-image": "^3.2.0",
+    "url": "^0.11.4",
+    "words-to-numbers": "^1.5.1"
+  }
+}
